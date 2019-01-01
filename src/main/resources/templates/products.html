@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Store</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="prod: ${allProducts}">
+				<td><a href="#" th:text="${prod.name}" name="detailLink"></a></td>
+				<td th:text="${#numbers.formatDecimal(prod.price, 1, 2)}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="productDetail"></div>
+    <script src="app.js"></script>
+</body>
+</html>
